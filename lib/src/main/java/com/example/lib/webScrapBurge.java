@@ -9,7 +9,7 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.*;
 
-public class MyClass {
+public class webScrapBurge {
 
     public static List<String> BurgeBreakfastitems;
     public static List<String> array1BurgeBreakfast;
@@ -49,6 +49,7 @@ public class MyClass {
 
     public static void burgeBreakfastWebScrape() throws IOException {
         BurgeBreakfastitems = new ArrayList<>();
+
         Document document = Jsoup.connect("https://dining.uiowa.edu/burge-market-place").get();
 
         //Burge Breakfast Scrape
@@ -71,7 +72,8 @@ public class MyClass {
     }
 
 
-    public static void arrangeArraysBurgeBreakfast(){
+    public static void arrangeArraysBurgeBreakfast() throws IOException {
+        burgeBreakfastWebScrape();
         array1BurgeBreakfast = new ArrayList<>();
         array2BurgeBreakfast = new ArrayList<>();
         array3BurgeBreakfast = new ArrayList<>();
@@ -131,7 +133,8 @@ public class MyClass {
 
     }
 
-    public static void arrangeArraysBurgeLunch(){
+    public static void arrangeArraysBurgeLunch() throws IOException {
+        burgeLunchWebScrape();
         array1BurgeLunch = new ArrayList<>();
         array2BurgeLunch = new ArrayList<>();
         array3BurgeLunch = new ArrayList<>();
@@ -202,9 +205,9 @@ public class MyClass {
         BurgeDinneritems = new ArrayList<>();
         Document document = Jsoup.connect("https://dining.uiowa.edu/burge-market-place").get();
         //Burge Lunch Scrape
-        Element lunchId = document.getElementById("Dinner");
-        Elements lunchDivs = lunchId.getElementsByTag("div");
-        for(Element div : lunchDivs ){
+        Element dinnerId = document.getElementById("Dinner");
+        Elements dinnerDivs = dinnerId.getElementsByTag("div");
+        for(Element div : dinnerDivs ){
             if(div.hasClass("panel-heading")){
                 BurgeDinneritems.add(div.text());
             }
@@ -220,7 +223,8 @@ public class MyClass {
 
     }
 
-    public static void arrangeArraysDinnerLunch(){
+    public static void arrangeArraysDinnerLunch() throws IOException {
+        burgeDinnerWebScrape();
         array1BurgeDinner = new ArrayList<>();
         array2BurgeDinner = new ArrayList<>();
         array3BurgeDinner = new ArrayList<>();
@@ -263,15 +267,15 @@ public class MyClass {
         array8BurgeDinner = BurgeDinneritems.subList(indexofBurgeDinner.get(7), indexofBurgeDinner.get(8));
         array9BurgeDinner = BurgeDinneritems.subList(indexofBurgeDinner.get(8),BurgeDinneritems.size());
 
-//        System.out.println(array1BurgeDinner);
-//        System.out.println(array2BurgeDinner);
-//        System.out.println(array3BurgeDinner);
-//        System.out.println(array4BurgeDinner);
-//        System.out.println(array5BurgeDinner);
-//        System.out.println(array6BurgeDinner);
-//        System.out.println(array7BurgeDinner);
-//        System.out.println(array8BurgeDinner);
-//        System.out.println(array9BurgeDinner);
+        System.out.println(array1BurgeDinner);
+        System.out.println(array2BurgeDinner);
+        System.out.println(array3BurgeDinner);
+        System.out.println(array4BurgeDinner);
+        System.out.println(array5BurgeDinner);
+        System.out.println(array6BurgeDinner);
+        System.out.println(array7BurgeDinner);
+        System.out.println(array8BurgeDinner);
+        System.out.println(array9BurgeDinner);
 
 
     }
@@ -280,15 +284,14 @@ public class MyClass {
 
 
     public static void main(String[] args) throws IOException {
-        burgeBreakfastWebScrape();
-        arrangeArraysBurgeBreakfast();
-//        burgeLunchWebScrape();
+
+//        arrangeArraysBurgeBreakfast();
+//
 //        arrangeArraysBurgeLunch();
-//        burgeDinnerWebScrape();
-//        arrangeArraysDinnerLunch();
+
+        arrangeArraysDinnerLunch();
 
 
     }
-
 }
 
