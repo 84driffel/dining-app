@@ -43,40 +43,37 @@ public class NotificationsFragment extends Fragment {
     public String lunchString;
     public String dinnerString;
 
-    public ArrayList<String> BurgeBreakfastitems;
-    public List<String> array1BurgeBreakfast;
-    public List<String> array2BurgeBreakfast;
-    public List<String> array3BurgeBreakfast;
-    public List<String> array4BurgeBreakfast;
-    public List<String> array5BurgeBreakfast;
-    public List<String> array6BurgeBreakfast;
-    public List<Integer> indexofBurgeBreakfast;
+    public ArrayList<String> HillBreakfastitems;
+    public List<String> array1HillBreakfast;
+    public List<String> array2HillBreakfast;
+    public List<String> array3HillBreakfast;
+    public List<String> array4HillBreakfast;
+    public List<String> array5HillBreakfast;
+    public List<Integer> indexofHillBreakfast;
 
-    public ArrayList<String> BurgeLunchitems;
-    public List<String> array1BurgeLunch;
-    public List<String> array2BurgeLunch;
-    public List<String> array3BurgeLunch;
-    public List<String> array4BurgeLunch;
-    public List<String> array5BurgeLunch;
-    public List<String> array6BurgeLunch;
-    public List<String> array7BurgeLunch;
-    public List<String> array8BurgeLunch;
-    public List<String> array9BurgeLunch;
-    public List<String> array10BurgeLunch;
-    public List<String> array11BurgeLunch;
-    public List<Integer> indexofBurgeLunch;
+    public ArrayList<String> HillLunchitems;
+    public List<String> array1HillLunch;
+    public List<String> array2HillLunch;
+    public List<String> array3HillLunch;
+    public List<String> array4HillLunch;
+    public List<String> array5HillLunch;
+    public List<String> array6HillLunch;
+    public List<String> array7HillLunch;
+    public List<String> array8HillLunch;
+    public List<String> array9HillLunch;
+    public List<Integer> indexofHillLunch;
 
-    public  ArrayList<String> BurgeDinneritems;
-    public  List<String> array1BurgeDinner;
-    public  List<String> array2BurgeDinner;
-    public  List<String> array3BurgeDinner;
-    public  List<String> array4BurgeDinner;
-    public  List<String> array5BurgeDinner;
-    public  List<String> array6BurgeDinner;
-    public  List<String> array7BurgeDinner;
-    public  List<String> array8BurgeDinner;
-    public  List<String> array9BurgeDinner;
-    public  List<Integer> indexofBurgeDinner;
+    public ArrayList<String> HillDinneritems;
+    public List<String> array1HillDinner;
+    public List<String> array2HillDinner;
+    public List<String> array3HillDinner;
+    public List<String> array4HillDinner;
+    public List<String> array5HillDinner;
+    public List<String> array6HillDinner;
+    public List<String> array7HillDinner;
+    public List<String> array8HillDinner;
+    public List<String> array9HillDinner;
+    public List<Integer> indexofHillDinner;
 
 
 
@@ -102,12 +99,12 @@ public class NotificationsFragment extends Fragment {
             public void onClick(View v) {
 
                 Intent i = new Intent(NotificationsFragment.this.getActivity(), FoodScreen.class);
-                i.putStringArrayListExtra("section1", new ArrayList<>(array1BurgeBreakfast));
-                i.putStringArrayListExtra("section2", new ArrayList<>(array2BurgeBreakfast));
-                i.putStringArrayListExtra("section3", new ArrayList<>(array3BurgeBreakfast));
-                i.putStringArrayListExtra("section4", new ArrayList<>(array4BurgeBreakfast));
-                i.putStringArrayListExtra("section5", new ArrayList<>(array5BurgeBreakfast));
-                i.putStringArrayListExtra("section6", new ArrayList<>(array6BurgeBreakfast));
+                i.putStringArrayListExtra("section1", new ArrayList<>(array1HillBreakfast));
+                i.putStringArrayListExtra("section2", new ArrayList<>(array2HillBreakfast));
+                i.putStringArrayListExtra("section3", new ArrayList<>(array3HillBreakfast));
+                i.putStringArrayListExtra("section4", new ArrayList<>(array4HillBreakfast));
+                i.putStringArrayListExtra("section5", new ArrayList<>(array5HillBreakfast));
+                i.putStringArrayListExtra("section6", new ArrayList<>());
                 i.putStringArrayListExtra("section7", new ArrayList<>());
                 i.putStringArrayListExtra("section8", new ArrayList<>());
                 i.putStringArrayListExtra("section9", new ArrayList<>());
@@ -129,17 +126,17 @@ public class NotificationsFragment extends Fragment {
             public void onClick(View v) {
 
                 Intent i = new Intent(NotificationsFragment.this.getActivity(), FoodScreen.class);
-                i.putStringArrayListExtra("section1", new ArrayList<>(array1BurgeLunch));
-                i.putStringArrayListExtra("section2", new ArrayList<>(array2BurgeLunch));
-                i.putStringArrayListExtra("section3", new ArrayList<>(array3BurgeLunch));
-                i.putStringArrayListExtra("section4", new ArrayList<>(array4BurgeLunch));
-                i.putStringArrayListExtra("section5", new ArrayList<>(array5BurgeLunch));
-                i.putStringArrayListExtra("section6", new ArrayList<>(array6BurgeLunch));
-                i.putStringArrayListExtra("section7", new ArrayList<>(array7BurgeLunch));
-                i.putStringArrayListExtra("section8", new ArrayList<>(array8BurgeLunch));
-                i.putStringArrayListExtra("section9", new ArrayList<>(array9BurgeLunch));
-                i.putStringArrayListExtra("section10", new ArrayList<>(array10BurgeLunch));
-                i.putStringArrayListExtra("section11", new ArrayList<>(array11BurgeLunch));
+                i.putStringArrayListExtra("section1", new ArrayList<>(array1HillLunch));
+                i.putStringArrayListExtra("section2", new ArrayList<>(array2HillLunch));
+                i.putStringArrayListExtra("section3", new ArrayList<>(array3HillLunch));
+                i.putStringArrayListExtra("section4", new ArrayList<>(array4HillLunch));
+                i.putStringArrayListExtra("section5", new ArrayList<>(array5HillLunch));
+                i.putStringArrayListExtra("section6", new ArrayList<>(array6HillLunch));
+                i.putStringArrayListExtra("section7", new ArrayList<>(array7HillLunch));
+                i.putStringArrayListExtra("section8", new ArrayList<>(array8HillLunch));
+                i.putStringArrayListExtra("section9", new ArrayList<>(array9HillLunch));
+                i.putStringArrayListExtra("section10", new ArrayList<>());
+                i.putStringArrayListExtra("section11", new ArrayList<>());
 //                if (lunchString != null) { i.putExtra("food", lunchString); }
 //                else {i.putExtra("food", "Could not load menu data.");}
                 startActivity(i);
@@ -152,15 +149,15 @@ public class NotificationsFragment extends Fragment {
             public void onClick(View v) {
 
                 Intent i = new Intent(NotificationsFragment.this.getActivity(), FoodScreen.class);
-                i.putStringArrayListExtra("section1", new ArrayList<>(array1BurgeDinner));
-                i.putStringArrayListExtra("section2", new ArrayList<>(array2BurgeDinner));
-                i.putStringArrayListExtra("section3", new ArrayList<>(array3BurgeDinner));
-                i.putStringArrayListExtra("section4", new ArrayList<>(array4BurgeDinner));
-                i.putStringArrayListExtra("section5", new ArrayList<>(array5BurgeDinner));
-                i.putStringArrayListExtra("section6", new ArrayList<>(array6BurgeDinner));
-                i.putStringArrayListExtra("section7", new ArrayList<>(array7BurgeDinner));
-                i.putStringArrayListExtra("section8", new ArrayList<>(array8BurgeDinner));
-                i.putStringArrayListExtra("section9", new ArrayList<>(array9BurgeDinner));
+                i.putStringArrayListExtra("section1", new ArrayList<>(array1HillDinner));
+                i.putStringArrayListExtra("section2", new ArrayList<>(array2HillDinner));
+                i.putStringArrayListExtra("section3", new ArrayList<>(array3HillDinner));
+                i.putStringArrayListExtra("section4", new ArrayList<>(array4HillDinner));
+                i.putStringArrayListExtra("section5", new ArrayList<>(array5HillDinner));
+                i.putStringArrayListExtra("section6", new ArrayList<>(array6HillDinner));
+                i.putStringArrayListExtra("section7", new ArrayList<>(array7HillDinner));
+                i.putStringArrayListExtra("section8", new ArrayList<>(array8HillDinner));
+                i.putStringArrayListExtra("section9", new ArrayList<>(array9HillDinner));
                 i.putStringArrayListExtra("section10", new ArrayList<>());
                 i.putStringArrayListExtra("section11", new ArrayList<>());
 //                if (dinnerString != null) { i.putExtra("food", dinnerString); }
@@ -187,11 +184,11 @@ public class NotificationsFragment extends Fragment {
         @Override
         protected Void doInBackground(Void... params) {
             try {
-                BurgeBreakfastitems = new ArrayList<>();
-                BurgeLunchitems = new ArrayList<>();
-                BurgeDinneritems = new ArrayList<>();
+                HillBreakfastitems = new ArrayList<>();
+                HillLunchitems = new ArrayList<>();
+                HillDinneritems = new ArrayList<>();
 
-                Document document = Jsoup.connect("https://dining.uiowa.edu/burge-market-place").get();
+                Document document = Jsoup.connect("https://dining.uiowa.edu/hillcrest-market-place").get();
 
                 Element breakfastId = document.getElementById("Breakfast");
                 Elements breakfastDivs = breakfastId.getElementsByTag("div");
@@ -201,43 +198,43 @@ public class NotificationsFragment extends Fragment {
                 Elements dinnerDivs = dinnerId.getElementsByTag("div");
                 for(Element div : breakfastDivs ){
                     if(div.hasClass("panel-heading")){
-                        BurgeBreakfastitems.add(div.text());
+                        HillBreakfastitems.add(div.text());
                     }
                     if(div.hasClass("h5 menu-course-title")) {
-                        BurgeBreakfastitems.add(div.text());
+                        HillBreakfastitems.add(div.text());
                     }
                     if(div.hasClass("menu-item")){
-                        BurgeBreakfastitems.add(div.text());
+                        HillBreakfastitems.add(div.text());
                     }
 
                 }
                 for(Element d : lunchDivs ){
                     if(d.hasClass("panel-heading")){
-                        BurgeLunchitems.add(d.text());
+                        HillLunchitems.add(d.text());
                     }
                     if(d.hasClass("h5 menu-course-title")) {
-                        BurgeLunchitems.add(d.text());
+                        HillLunchitems.add(d.text());
                     }
                     if(d.hasClass("menu-item")){
-                        BurgeLunchitems.add(d.text());
+                        HillLunchitems.add(d.text());
                     }
 
                 }
                 for(Element div : dinnerDivs ){
                     if(div.hasClass("panel-heading")){
-                        BurgeDinneritems.add(div.text());
+                        HillDinneritems.add(div.text());
                     }
                     if(div.hasClass("h5 menu-course-title")) {
-                        BurgeDinneritems.add(div.text());
+                        HillDinneritems.add(div.text());
                     }
                     if(div.hasClass("menu-item")){
-                        BurgeDinneritems.add(div.text());
+                        HillDinneritems.add(div.text());
                     }
 
                 }
-                while(BurgeDinneritems.remove(""));
-                while(BurgeLunchitems.remove(""));
-                while(BurgeBreakfastitems.remove(""));
+                while(HillDinneritems.remove(""));
+                while(HillLunchitems.remove(""));
+                while(HillBreakfastitems.remove(""));
             } catch (IOException e) {
                 e.printStackTrace();
             } return null;
@@ -252,126 +249,121 @@ public class NotificationsFragment extends Fragment {
 //            lunchString = burgeLunchText;
 //            dinnerString = burgeDinnerText;
 
-            //Arranging Burge Breakfast
-            array1BurgeBreakfast = new ArrayList<>();
-            array2BurgeBreakfast = new ArrayList<>();
-            array3BurgeBreakfast = new ArrayList<>();
-            array4BurgeBreakfast = new ArrayList<>();
-            array5BurgeBreakfast = new ArrayList<>();
-            array6BurgeBreakfast = new ArrayList<>();
-            indexofBurgeBreakfast = new ArrayList<>();
-            int burgeFruitYogurtbar = BurgeBreakfastitems.indexOf("Burge Fruit & Yogurt Bar");
-            int burgeBreakfastBar = BurgeBreakfastitems.indexOf("Burge Breakfast Bar");
-            int burgeEastsideGrille = BurgeBreakfastitems.indexOf("Burge Eastside Grille");
-            int burgeDesserts = BurgeBreakfastitems.indexOf("Burge Desserts");
-            int burgeSanteFe = BurgeBreakfastitems.indexOf("Burge Santa Fe");
-            int burgeThrive = BurgeBreakfastitems.indexOf("Burge Thrive ( Allergen Free )");
-            indexofBurgeBreakfast.add(burgeFruitYogurtbar);
-            indexofBurgeBreakfast.add(burgeBreakfastBar);
-            indexofBurgeBreakfast.add(burgeEastsideGrille);
-            indexofBurgeBreakfast.add(burgeDesserts);
-            indexofBurgeBreakfast.add(burgeSanteFe);
-            indexofBurgeBreakfast.add(burgeThrive);
-            Collections.sort(indexofBurgeBreakfast);
+            //Arranging Hill Breakfast
+            array1HillBreakfast = new ArrayList<>();
+            array2HillBreakfast = new ArrayList<>();
+            array3HillBreakfast = new ArrayList<>();
+            array4HillBreakfast = new ArrayList<>();
+            array5HillBreakfast = new ArrayList<>();
+            indexofHillBreakfast = new ArrayList<>();
 
-            array1BurgeBreakfast =  BurgeBreakfastitems.subList(indexofBurgeBreakfast.get(0),indexofBurgeBreakfast.get(1));
-            array2BurgeBreakfast =  BurgeBreakfastitems.subList(indexofBurgeBreakfast.get(1),indexofBurgeBreakfast.get(2));
-            array3BurgeBreakfast =  BurgeBreakfastitems.subList(indexofBurgeBreakfast.get(2),indexofBurgeBreakfast.get(3));
-            array4BurgeBreakfast =  BurgeBreakfastitems.subList(indexofBurgeBreakfast.get(3),indexofBurgeBreakfast.get(4));
-            array5BurgeBreakfast =  BurgeBreakfastitems.subList(indexofBurgeBreakfast.get(4),indexofBurgeBreakfast.get(5));
-            array6BurgeBreakfast =  BurgeBreakfastitems.subList(indexofBurgeBreakfast.get(5), BurgeBreakfastitems.size());
+            int hillFieldOfGreens = HillBreakfastitems.indexOf("Hillcrest Field of Greens");
+            int hillGrandAveGrill = HillBreakfastitems.indexOf("Hillcrest Grand Ave Grill");
+            int hillDesserts = HillBreakfastitems.indexOf("Hillcrest Desserts");
+            int hillGluten = HillBreakfastitems.indexOf("Hillcrest Gluten Free");
+            int hillDrinks = HillBreakfastitems.indexOf("Hillcrest Drinks/Condiments");
 
-            //Aranging Burge Lunch
-            array1BurgeLunch = new ArrayList<>();
-            array2BurgeLunch = new ArrayList<>();
-            array3BurgeLunch = new ArrayList<>();
-            array4BurgeLunch = new ArrayList<>();
-            array5BurgeLunch = new ArrayList<>();
-            array6BurgeLunch = new ArrayList<>();
-            array7BurgeLunch = new ArrayList<>();
-            array8BurgeLunch = new ArrayList<>();
-            array9BurgeLunch = new ArrayList<>();
-            array10BurgeLunch = new ArrayList<>();
-            array11BurgeLunch = new ArrayList<>();
-            indexofBurgeLunch = new ArrayList<>();
+            indexofHillBreakfast.add(hillFieldOfGreens);
+            indexofHillBreakfast.add(hillGrandAveGrill);
+            indexofHillBreakfast.add(hillDesserts);
+            indexofHillBreakfast.add(hillGluten);
+            indexofHillBreakfast.add(hillDrinks);
 
-            int burgeFruitYogurtbar2 = BurgeLunchitems.indexOf("Burge Fruit & Yogurt Bar");
-            int burgeSaladBar = BurgeLunchitems.indexOf("Burge Salad Bar");
-            int burgeCarvingStation = BurgeLunchitems.indexOf("Burge Carving Station");
-            int burgePizza = BurgeLunchitems.indexOf("Burge Pizza/Pasta");
-            int burgeWrap = BurgeLunchitems.indexOf("Burge It's a Wrap");
-            int burgeBreakfastbar = BurgeLunchitems.indexOf("Burge Breakfast Bar");
-            int burgeInternational = BurgeLunchitems.indexOf("Burge International");
-            int burgeDesserts2 = BurgeLunchitems.indexOf("Burge Desserts");
-            int burgeEastside = BurgeLunchitems.indexOf("Burge Eastside Grille");
-            int burgeThrive2 = BurgeLunchitems.indexOf("Burge Thrive ( Allergen Free )");
-            int burgeSantafe = BurgeLunchitems.indexOf("Burge Santa Fe");
+            Collections.sort(indexofHillBreakfast);
 
-            indexofBurgeLunch.add(burgeFruitYogurtbar2);
-            indexofBurgeLunch.add(burgeSaladBar);
-            indexofBurgeLunch.add(burgeCarvingStation);
-            indexofBurgeLunch.add(burgePizza);
-            indexofBurgeLunch.add(burgeWrap);
-            indexofBurgeLunch.add(burgeBreakfastbar);
-            indexofBurgeLunch.add(burgeInternational);
-            indexofBurgeLunch.add(burgeDesserts2);
-            indexofBurgeLunch.add(burgeEastside);
-            indexofBurgeLunch.add(burgeThrive2);
-            indexofBurgeLunch.add(burgeSantafe);
-            Collections.sort(indexofBurgeLunch);
-            array1BurgeLunch = BurgeLunchitems.subList(indexofBurgeLunch.get(0),indexofBurgeLunch.get(1));
-            array2BurgeLunch = BurgeLunchitems.subList(indexofBurgeLunch.get(1),indexofBurgeLunch.get(2));
-            array3BurgeLunch = BurgeLunchitems.subList(indexofBurgeLunch.get(2),indexofBurgeLunch.get(3));
-            array4BurgeLunch = BurgeLunchitems.subList(indexofBurgeLunch.get(3),indexofBurgeLunch.get(4));
-            array5BurgeLunch = BurgeLunchitems.subList(indexofBurgeLunch.get(4),indexofBurgeLunch.get(5));
-            array6BurgeLunch = BurgeLunchitems.subList(indexofBurgeLunch.get(5),indexofBurgeLunch.get(6));
-            array7BurgeLunch = BurgeLunchitems.subList(indexofBurgeLunch.get(6),indexofBurgeLunch.get(7));
-            array8BurgeLunch = BurgeLunchitems.subList(indexofBurgeLunch.get(7),indexofBurgeLunch.get(8));
-            array9BurgeLunch = BurgeLunchitems.subList(indexofBurgeLunch.get(8),indexofBurgeLunch.get(9));
-            array10BurgeLunch = BurgeLunchitems.subList(indexofBurgeLunch.get(9),indexofBurgeLunch.get(10));
-            array11BurgeLunch = BurgeLunchitems.subList(indexofBurgeLunch.get(10),BurgeLunchitems.size());
+            array1HillBreakfast = HillBreakfastitems.subList(indexofHillBreakfast.get(0),indexofHillBreakfast.get(1));
+            array2HillBreakfast = HillBreakfastitems.subList(indexofHillBreakfast.get(1),indexofHillBreakfast.get(2));
+            array3HillBreakfast = HillBreakfastitems.subList(indexofHillBreakfast.get(2),indexofHillBreakfast.get(3));
+            array4HillBreakfast = HillBreakfastitems.subList(indexofHillBreakfast.get(3),indexofHillBreakfast.get(4));
+            array5HillBreakfast = HillBreakfastitems.subList(indexofHillBreakfast.get(4),HillBreakfastitems.size());
 
-            //Arranging Burge Dinner
-            array1BurgeDinner = new ArrayList<>();
-            array2BurgeDinner = new ArrayList<>();
-            array3BurgeDinner = new ArrayList<>();
-            array4BurgeDinner = new ArrayList<>();
-            array5BurgeDinner = new ArrayList<>();
-            array6BurgeDinner = new ArrayList<>();
-            array7BurgeDinner = new ArrayList<>();
-            array8BurgeDinner = new ArrayList<>();
-            array9BurgeDinner = new ArrayList<>();
-            indexofBurgeDinner = new ArrayList<>();
+            //Aranging Hill Lunch
+            array1HillLunch = new ArrayList<>();
+            array2HillLunch = new ArrayList<>();
+            array3HillLunch = new ArrayList<>();
+            array4HillLunch = new ArrayList<>();
+            array5HillLunch = new ArrayList<>();
+            array6HillLunch = new ArrayList<>();
+            array7HillLunch = new ArrayList<>();
+            array8HillLunch = new ArrayList<>();
+            array9HillLunch = new ArrayList<>();
+            indexofHillLunch = new ArrayList<>();
 
-            int burgeFruitYogurtbar3 = BurgeDinneritems.indexOf("Burge Fruit & Yogurt Bar");
-            int burgeSaladBar3 = BurgeDinneritems.indexOf("Burge Salad Bar");
-            int burgeWrap3 = BurgeDinneritems.indexOf("Burge It's a Wrap");
-            int burgeCarvingStation3 = BurgeDinneritems.indexOf("Burge Carving Station");
-            int burgeDesserts3 = BurgeDinneritems.indexOf("Burge Desserts");
-            int burgePizza3 = BurgeDinneritems.indexOf("Burge Pizza/Pasta");
-            int burgeThrive3 = BurgeDinneritems.indexOf("Burge Thrive ( Allergen Free )");
-            int burgeEastside3 = BurgeDinneritems.indexOf("Burge Eastside Grille");
-            int burgeSantafe3 = BurgeDinneritems.indexOf("Burge Santa Fe");
-            indexofBurgeDinner.add(burgeFruitYogurtbar3);
-            indexofBurgeDinner.add(burgeSaladBar3);
-            indexofBurgeDinner.add(burgeWrap3);
-            indexofBurgeDinner.add(burgeCarvingStation3);
-            indexofBurgeDinner.add(burgeDesserts3);
-            indexofBurgeDinner.add(burgePizza3);
-            indexofBurgeDinner.add(burgeThrive3);
-            indexofBurgeDinner.add(burgeEastside3);
-            indexofBurgeDinner.add(burgeSantafe3);
-            Collections.sort(indexofBurgeDinner);
+            int hillFieldOfGreens2 = HillLunchitems.indexOf("Hillcrest Field of Greens");
+            int hillGolden2 = HillLunchitems.indexOf("Hillcrest Golden Harvest");
+            int hillPizza2 = HillLunchitems.indexOf("Hillcrest Piazza Cafe");
+            int hillCorner2 = HillLunchitems.indexOf("Hillcrest Corner Wok");
+            int hillGrandAveGrill2 = HillLunchitems.indexOf("Hillcrest Grand Ave Grill");
+            int hillCafeRio2 = HillLunchitems.indexOf("Hillcrest Cafe Rio Grande");
+            int hillDesserts2 = HillLunchitems.indexOf("Hillcrest Desserts");
+            int hillGluten2 = HillLunchitems.indexOf("Hillcrest Gluten Free");
+            int hillDrinks2 = HillLunchitems.indexOf("Hillcrest Drinks/Condiments");
 
-            array1BurgeDinner = BurgeDinneritems.subList(indexofBurgeDinner.get(0), indexofBurgeDinner.get(1));
-            array2BurgeDinner = BurgeDinneritems.subList(indexofBurgeDinner.get(1), indexofBurgeDinner.get(2));
-            array3BurgeDinner = BurgeDinneritems.subList(indexofBurgeDinner.get(2), indexofBurgeDinner.get(3));
-            array4BurgeDinner = BurgeDinneritems.subList(indexofBurgeDinner.get(3), indexofBurgeDinner.get(4));
-            array5BurgeDinner = BurgeDinneritems.subList(indexofBurgeDinner.get(4), indexofBurgeDinner.get(5));
-            array6BurgeDinner = BurgeDinneritems.subList(indexofBurgeDinner.get(5), indexofBurgeDinner.get(6));
-            array7BurgeDinner = BurgeDinneritems.subList(indexofBurgeDinner.get(6), indexofBurgeDinner.get(7));
-            array8BurgeDinner = BurgeDinneritems.subList(indexofBurgeDinner.get(7), indexofBurgeDinner.get(8));
-            array9BurgeDinner = BurgeDinneritems.subList(indexofBurgeDinner.get(8),BurgeDinneritems.size());
+            indexofHillLunch.add(hillFieldOfGreens2);
+            indexofHillLunch.add(hillGolden2);
+            indexofHillLunch.add(hillPizza2);
+            indexofHillLunch.add(hillCorner2);
+            indexofHillLunch.add(hillGrandAveGrill2);
+            indexofHillLunch.add(hillCafeRio2);
+            indexofHillLunch.add(hillDesserts2);
+            indexofHillLunch.add(hillGluten2);
+            indexofHillLunch.add(hillDrinks2);
+
+            Collections.sort(indexofHillLunch);
+
+            array1HillLunch = HillLunchitems.subList(indexofHillLunch.get(0),indexofHillLunch.get(1));
+            array2HillLunch = HillLunchitems.subList(indexofHillLunch.get(1),indexofHillLunch.get(2));
+            array3HillLunch = HillLunchitems.subList(indexofHillLunch.get(2),indexofHillLunch.get(3));
+            array4HillLunch = HillLunchitems.subList(indexofHillLunch.get(3),indexofHillLunch.get(4));
+            array5HillLunch = HillLunchitems.subList(indexofHillLunch.get(4),indexofHillLunch.get(5));
+            array6HillLunch = HillLunchitems.subList(indexofHillLunch.get(5),indexofHillLunch.get(6));
+            array7HillLunch = HillLunchitems.subList(indexofHillLunch.get(6),indexofHillLunch.get(7));
+            array8HillLunch = HillLunchitems.subList(indexofHillLunch.get(7),indexofHillLunch.get(8));
+            array9HillLunch = HillLunchitems.subList(indexofHillLunch.get(8),HillLunchitems.size());
+
+            //Arranging Hill Dinner
+            array1HillDinner = new ArrayList<>();
+            array2HillDinner = new ArrayList<>();
+            array3HillDinner = new ArrayList<>();
+            array4HillDinner = new ArrayList<>();
+            array5HillDinner = new ArrayList<>();
+            array6HillDinner = new ArrayList<>();
+            array7HillDinner = new ArrayList<>();
+            array8HillDinner = new ArrayList<>();
+            array9HillDinner = new ArrayList<>();
+            indexofHillDinner = new ArrayList<>();
+
+            int hillFieldOfGreens3 = HillDinneritems.indexOf("Hillcrest Field of Greens");
+            int hillGolden3 = HillDinneritems.indexOf("Hillcrest Golden Harvest");
+            int hillPizza3 = HillDinneritems.indexOf("Hillcrest Piazza Cafe");
+            int hillCorner3 = HillDinneritems.indexOf("Hillcrest Corner Wok");
+            int hillGrandAveGrill3 = HillDinneritems.indexOf("Hillcrest Grand Ave Grill");
+            int hillCafeRio3 = HillDinneritems.indexOf("Hillcrest Cafe Rio Grande");
+            int hillDesserts3 = HillDinneritems.indexOf("Hillcrest Desserts");
+            int hillGluten3 = HillDinneritems.indexOf("Hillcrest Gluten Free");
+            int hillDrinks3 = HillDinneritems.indexOf("Hillcrest Drinks/Condiments");
+
+            indexofHillDinner.add(hillFieldOfGreens3);
+            indexofHillDinner.add(hillGolden3);
+            indexofHillDinner.add(hillPizza3);
+            indexofHillDinner.add(hillCorner3);
+            indexofHillDinner.add(hillGrandAveGrill3);
+            indexofHillDinner.add(hillCafeRio3);
+            indexofHillDinner.add(hillDesserts3);
+            indexofHillDinner.add(hillGluten3);
+            indexofHillDinner.add(hillDrinks3);
+
+            Collections.sort(indexofHillDinner);
+
+            array1HillDinner = HillDinneritems.subList(indexofHillDinner.get(0),indexofHillDinner.get(1));
+            array2HillDinner = HillDinneritems.subList(indexofHillDinner.get(1),indexofHillDinner.get(2));
+            array3HillDinner = HillDinneritems.subList(indexofHillDinner.get(2),indexofHillDinner.get(3));
+            array4HillDinner = HillDinneritems.subList(indexofHillDinner.get(3),indexofHillDinner.get(4));
+            array5HillDinner = HillDinneritems.subList(indexofHillDinner.get(4),indexofHillDinner.get(5));
+            array6HillDinner = HillDinneritems.subList(indexofHillDinner.get(5),indexofHillDinner.get(6));
+            array7HillDinner = HillDinneritems.subList(indexofHillDinner.get(6),indexofHillDinner.get(7));
+            array8HillDinner = HillDinneritems.subList(indexofHillDinner.get(7),indexofHillDinner.get(8));
+            array9HillDinner = HillDinneritems.subList(indexofHillDinner.get(8),HillDinneritems.size());
 
 
         }
