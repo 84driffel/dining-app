@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib/Dining Hall Application.Dining_Hall_Application.lib.iml" filepath="$PROJECT_DIR$/.idea/modules/lib/Dining Hall Application.Dining_Hall_Application.lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Dining_Hall_Application.iml" filepath="$PROJECT_DIR$/.idea/modules/Dining_Hall_Application.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Dining_Hall_Application.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Dining_Hall_Application.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib/Dining_Hall_Application.lib.iml" filepath="$PROJECT_DIR$/.idea/modules/lib/Dining_Hall_Application.lib.iml" />
