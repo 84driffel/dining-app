@@ -16,6 +16,11 @@ public class FoodScreen extends AppCompatActivity {
     public List<String> section4;
     public List<String> section5;
     public List<String> section6;
+    public List<String> section7;
+    public List<String> section8;
+    public List<String> section9;
+    public List<String> section10;
+    public List<String> section11;
 
 
     @Override
@@ -24,8 +29,13 @@ public class FoodScreen extends AppCompatActivity {
         section2 = new ArrayList<>();
         section3 = new ArrayList<>();
         section4 = new ArrayList<>();
-        section5= new ArrayList<>();
+        section5 = new ArrayList<>();
         section6 = new ArrayList<>();
+        section7 = new ArrayList<>();
+        section8 = new ArrayList<>();
+        section9 = new ArrayList<>();
+        section10 = new ArrayList<>();
+        section11 = new ArrayList<>();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_screen);
         //unparsed = getIntent().getStringArrayListExtra("food");
@@ -35,10 +45,17 @@ public class FoodScreen extends AppCompatActivity {
         section4 = getIntent().getStringArrayListExtra("section4");
         section5 = getIntent().getStringArrayListExtra("section5");
         section6 = getIntent().getStringArrayListExtra("section6");
+        section7 = getIntent().getStringArrayListExtra("section7");
+        section8 = getIntent().getStringArrayListExtra("section8");
+        section9 = getIntent().getStringArrayListExtra("section9");
+        section10 = getIntent().getStringArrayListExtra("section10");
+        section11 = getIntent().getStringArrayListExtra("section11");
+
         /*if (unparsed == null) {
             //finish();
             //startActivity(getIntent());
         }*/
+
         //String parsed = foodParser(unparsed);
         TextView foodTextView = (TextView) findViewById(R.id.foodText);
         for(int i = 0; i<section1.size(); i++){
@@ -75,5 +92,46 @@ public class FoodScreen extends AppCompatActivity {
             foodTextView.append(section6.get(i));
             foodTextView.append("\n");
         }
+        if(section7.isEmpty() && section8.isEmpty() && section9.isEmpty()){
+            System.out.println("hello");
+        }
+        else{
+            foodTextView.append("-------------------------------------------------------------------");
+            foodTextView.append("\n");
+            for(int i = 0; i<section7.size(); i++){
+                foodTextView.append(section7.get(i));
+                foodTextView.append("\n");
+            }
+            foodTextView.append("-------------------------------------------------------------------");
+            foodTextView.append("\n");
+            for(int i = 0; i<section8.size(); i++){
+                foodTextView.append(section8.get(i));
+                foodTextView.append("\n");
+            }
+            foodTextView.append("-------------------------------------------------------------------");
+            foodTextView.append("\n");
+            for(int i = 0; i<section9.size(); i++){
+                foodTextView.append(section9.get(i));
+                foodTextView.append("\n");
+            }
+
+        }
+        if(section10.isEmpty() && section11.isEmpty()){
+            System.out.println("hello2");
+        }else{
+            foodTextView.append("-------------------------------------------------------------------");
+            foodTextView.append("\n");
+            for(int i = 0; i<section10.size(); i++){
+                foodTextView.append(section10.get(i));
+                foodTextView.append("\n");
+            }
+            foodTextView.append("-------------------------------------------------------------------");
+            foodTextView.append("\n");
+            for(int i = 0; i<section11.size(); i++){
+                foodTextView.append(section11.get(i));
+                foodTextView.append("\n");
+            }
+        }
+
     }
 }
