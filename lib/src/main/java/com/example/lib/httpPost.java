@@ -4,7 +4,7 @@ import java.nio.charset.StandardCharsets;
 
 public class httpPost {
   
-    public static void writeVote(String[] args) throws Exception {
+    public static void voteWrite(String[] args) throws Exception {
       URL website = new URL("http://workoutdev.org:5000/vote");
       URLConnection yc = website.openConnection();
 	    HttpURLConnection http = (HttpURLConnection)yc;
