@@ -11,17 +11,17 @@
     <PreferenceCategory app:title="Dining Halls">
 
         <CheckBoxPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="burge"
             android:title="Burge" />
 
         <CheckBoxPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="catlett"
             android:title="Catlett" />
 
         <CheckBoxPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="hillcrest"
             android:title="Hillcrest" />
 
@@ -30,7 +30,7 @@
     <PreferenceCategory app:title="Food Options">
 
         <CheckBoxPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="entrees"
             android:title="Entrees" />
 
@@ -44,10 +44,6 @@
             android:key="desserts"
             android:title="Desserts" />
 
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="toppings"
-            android:title="Condiments/Toppings" />
 
     </PreferenceCategory>
 
@@ -59,7 +55,7 @@
             android:title="Breakfast" />
 
         <CheckBoxPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="lunch"
             android:title="Lunch" />
 

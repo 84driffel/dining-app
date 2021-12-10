@@ -60,56 +60,60 @@ public class FoodScreen extends AppCompatActivity {
 
         //String parsed = foodParser(unparsed);
         TextView foodTextView = (TextView) findViewById(R.id.foodText);
-        String a = "<b>" + section1.get(0) + "</b>";
-        String b = "<u>" + section1.get(1) + "</u>";
-        foodTextView.append(Html.fromHtml(a));
-        foodTextView.append("\n");
-        foodTextView.append("\n");
-        foodTextView.append(Html.fromHtml(b));
-        foodTextView.append("\n");
-        for(int i = 2; i<section1.size(); i++){
-            foodTextView.append(section1.get(i));
+        if (section1.isEmpty() == false) {
+            String a = "<b>" + section1.get(0) + "</b>";
+            String b = "<u>" + section1.get(1) + "</u>";
+            foodTextView.append(Html.fromHtml(a));
             foodTextView.append("\n");
+            foodTextView.append("\n");
+            foodTextView.append(Html.fromHtml(b));
+            foodTextView.append("\n");
+            for (int i = 2; i < section1.size(); i++) {
+                foodTextView.append(section1.get(i));
+                foodTextView.append("\n");
+            }
         }
-
-        foodTextView.append("\n");
-        String c = "<b>" + section2.get(0) + "</b>";
-        String d = "<u>" + section2.get(1) + "</u>";
-        foodTextView.append(Html.fromHtml(c));
-        foodTextView.append("\n");
-        foodTextView.append("\n");
-        foodTextView.append(Html.fromHtml(d));
-        foodTextView.append("\n");
-        for(int i = 2; i<section2.size(); i++){
-            foodTextView.append(section2.get(i));
+        if (section1.isEmpty() == false) {
             foodTextView.append("\n");
+            String c = "<b>" + section2.get(0) + "</b>";
+            String d = "<u>" + section2.get(1) + "</u>";
+            foodTextView.append(Html.fromHtml(c));
+            foodTextView.append("\n");
+            foodTextView.append("\n");
+            foodTextView.append(Html.fromHtml(d));
+            foodTextView.append("\n");
+            for (int i = 2; i < section2.size(); i++) {
+                foodTextView.append(section2.get(i));
+                foodTextView.append("\n");
+            }
         }
-
-        foodTextView.append("\n");
-        String e = "<b>" + section3.get(0) + "</b>";
-        String f = "<u>" + section3.get(1) + "</u>";
-        foodTextView.append(Html.fromHtml(e));
-        foodTextView.append("\n");
-        foodTextView.append("\n");
-        foodTextView.append(Html.fromHtml(f));
-        foodTextView.append("\n");
-        for(int i = 2; i<section3.size(); i++){
-            foodTextView.append(section3.get(i));
+        if (section1.isEmpty() == false) {
             foodTextView.append("\n");
+            String e = "<b>" + section3.get(0) + "</b>";
+            String f = "<u>" + section3.get(1) + "</u>";
+            foodTextView.append(Html.fromHtml(e));
+            foodTextView.append("\n");
+            foodTextView.append("\n");
+            foodTextView.append(Html.fromHtml(f));
+            foodTextView.append("\n");
+            for (int i = 2; i < section3.size(); i++) {
+                foodTextView.append(section3.get(i));
+                foodTextView.append("\n");
+            }
         }
-
-
-        foodTextView.append("\n");
-        String g = "<b>" + section4.get(0) + "</b>";
-        String h = "<u>" + section4.get(1) + "</u>";
-        foodTextView.append(Html.fromHtml(g));
-        foodTextView.append("\n");
-        foodTextView.append("\n");
-        foodTextView.append(Html.fromHtml(h));
-        foodTextView.append("\n");
-        for(int i = 2; i<section4.size(); i++){
-            foodTextView.append(section4.get(i));
+        if (section1.isEmpty() == false) {
             foodTextView.append("\n");
+            String g = "<b>" + section4.get(0) + "</b>";
+            String h = "<u>" + section4.get(1) + "</u>";
+            foodTextView.append(Html.fromHtml(g));
+            foodTextView.append("\n");
+            foodTextView.append("\n");
+            foodTextView.append(Html.fromHtml(h));
+            foodTextView.append("\n");
+            for (int i = 2; i < section4.size(); i++) {
+                foodTextView.append(section4.get(i));
+                foodTextView.append("\n");
+            }
         }
         if(section5.isEmpty()){
             System.out.println("section 5 is empty");
