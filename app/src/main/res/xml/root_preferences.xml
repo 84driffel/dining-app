@@ -1,0 +1,73 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.custom.CustomFragment">
+
+    <Preference
+        android:title="Finish"
+        android:key="menubutton"
+        android:summary="Apply settings and view custom menu" />
+
+    <PreferenceCategory app:title="Dining Halls">
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="burge"
+            android:title="Burge" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="catlett"
+            android:title="Catlett" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="hillcrest"
+            android:title="Hillcrest" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Food Options">
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="entrees"
+            android:title="Entrees" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="sides"
+            android:title="Sides" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="desserts"
+            android:title="Desserts" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="toppings"
+            android:title="Condiments/Toppings" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Meals">
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="breakfast"
+            android:title="Breakfast" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="lunch"
+            android:title="Lunch" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="dinner"
+            android:title="Dinner" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

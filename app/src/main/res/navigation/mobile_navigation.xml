@@ -22,4 +22,10 @@
         android:name="com.example.dininghallapplication.ui.notifications.NotificationsFragment"
         android:label="Hillcrest"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_custom"
+        android:name="com.example.dininghallapplication.ui.custom.CustomFragment"
+        android:label="Custom"
+        tools:layout="@xml/root_preferences" />
 </navigation>

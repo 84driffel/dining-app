@@ -16,4 +16,9 @@
         android:icon="@drawable/ic_notifications_black_24dp"
         android:title="Hillcrest" />
 
+    <item
+        android:id="@+id/navigation_custom"
+        android:icon="@drawable/ic_baseline_checklist_rtl_24"
+        android:title="Hillcrest" />
+
 </menu>
