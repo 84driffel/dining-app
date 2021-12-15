@@ -1,3 +1,5 @@
+package com.example.lib;
+
 import java.net.*;
 import java.io.*;
 
@@ -13,5 +15,10 @@ public class httpGet {
         while ((inputLine = in.readLine()) != null) 
             System.out.println(inputLine);
         in.close();
+    }
+
+    public static void main(String[] args) throws Exception {
+        String[] a = {"Oatmeal"};
+        voteRead(a);
     }
 }

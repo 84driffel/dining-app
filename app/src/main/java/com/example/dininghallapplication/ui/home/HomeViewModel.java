@@ -12,7 +12,7 @@ public class HomeViewModel extends ViewModel {
 
     public HomeViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Select a menu above");
+        mText.setValue("Vote on Item");
     }
 
     public LiveData<String> getText() {

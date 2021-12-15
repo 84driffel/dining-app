@@ -1,12 +1,17 @@
 package com.example.dininghallapplication.ui.home;
 
+
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.StrictMode;
+import android.text.Editable;
+import android.text.SpannableStringBuilder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -24,9 +29,20 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLConnection;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+
+import java.io.*;
+
+
 
 
 public class HomeFragment extends Fragment {
@@ -34,9 +50,12 @@ public class HomeFragment extends Fragment {
     private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
     private TextView textView;
+    private EditText inputText;
     private Button bbutton;
     private Button blbutton;
     private Button bdbutton;
+    private Button vote;
+
     public String breakfastString;
     public String lunchString;
     public String dinnerString;
@@ -77,8 +96,44 @@ public class HomeFragment extends Fragment {
     public  List<Integer> indexofBurgeDinner;
 
 
+    public  void voteRead(Editable args) throws Exception {
+        URL url = new URL("http://workoutdev.org:5000/vote?item=" + args);
+        URLConnection yc = url.openConnection();
+        BufferedReader in = new BufferedReader(
+                new InputStreamReader(
+                        yc.getInputStream()));
+        String inputLine;
+        while ((inputLine = in.readLine()) != null)
+            System.out.println("Updated value to: " + inputLine);
+        in.close();
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
+
+    }
+
+    public void voteWrite(Editable a) throws IOException {
+        URL website = new URL("http://workoutdev.org:5000/vote");
+        URLConnection yc = website.openConnection();
+        HttpURLConnection http = (HttpURLConnection) yc;
+        http.setRequestMethod("POST");
+        http.setDoOutput(true);
+        byte[] out = ("{\"name\":\"" + a + "\",\"value\":\"" + 1 + "\"}").getBytes(StandardCharsets.UTF_8);
+        //byte[] out1 = "{\"name\":\"Food\",\"value\":\"1\"}".getBytes(StandardCharsets.UTF_8);
+        int length = out.length;
+        //System.out.println(length);
+
+        http.setFixedLengthStreamingMode(length);
+        http.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+        http.connect();
+        try (OutputStream os = http.getOutputStream()) {
+            os.write(out);
+        }
+        String line;
+        BufferedReader reader = new BufferedReader(new InputStreamReader(yc.getInputStream()));
+        while ((line = reader.readLine()) != null) {
+            System.out.println(line);
+        }
+    }
+        public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
@@ -87,12 +142,19 @@ public class HomeFragment extends Fragment {
         View root = binding.getRoot();
 
         textView = binding.textHome;
+        inputText = binding.editTextBurge;
         homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
             }
         });
+            int SDK_INT = android.os.Build.VERSION.SDK_INT;
+            if (SDK_INT > 8) {
+                StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+                        .permitAll().build();
+                StrictMode.setThreadPolicy(policy);
+            }
         new doIT().execute();
         bbutton = binding.btnView;
         bbutton.setOnClickListener(new View.OnClickListener() {
@@ -167,6 +229,29 @@ public class HomeFragment extends Fragment {
 
             }
         });
+        vote= binding.btnView4;
+        vote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    voteWrite(inputText.getText());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                System.out.println("Submitted to db");
+
+
+                try {
+                    voteRead(inputText.getText());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                textView.setText("Voted for " + inputText.getText());
+                //inputText.setText("");
+            }
+
+        });
+
         return root;
     }
 
