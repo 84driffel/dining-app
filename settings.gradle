@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Dining Hall Application"
 include ':app'
+include ':lib'
