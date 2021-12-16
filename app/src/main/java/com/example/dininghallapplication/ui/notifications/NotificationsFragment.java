@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-
+//NotificationsFragment = HillCrest
 public class NotificationsFragment extends Fragment {
 
     private NotificationsViewModel notificationsViewModel;
@@ -39,9 +39,7 @@ public class NotificationsFragment extends Fragment {
     private Button bbutton;
     private Button blbutton;
     private Button bdbutton;
-    public String breakfastString;
-    public String lunchString;
-    public String dinnerString;
+
 
     public ArrayList<String> HillBreakfastitems;
     public List<String> array1HillBreakfast;
@@ -76,7 +74,7 @@ public class NotificationsFragment extends Fragment {
     public List<Integer> indexofHillDinner;
 
 
-
+    //will create the View for the HomeFragment aka Hillcrest menus
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         notificationsViewModel =
@@ -94,6 +92,8 @@ public class NotificationsFragment extends Fragment {
         });
         new doIT().execute();
         bbutton = binding.btnView;
+        //Hillcrest Breakfast menu button
+        //When clicked will go to FoodScreen with the menu
         bbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,12 +110,6 @@ public class NotificationsFragment extends Fragment {
                 i.putStringArrayListExtra("section9", new ArrayList<>());
                 i.putStringArrayListExtra("section10", new ArrayList<>());
                 i.putStringArrayListExtra("section11", new ArrayList<>());
-//                if (breakfastString != null) {
-//                    i.putExtra("food",breakfastString);
-//                }
-//                else {
-//                    i.putExtra("food", "Could not load menu data.");
-//                }
                 startActivity(i);
 
             }
@@ -137,8 +131,6 @@ public class NotificationsFragment extends Fragment {
                 i.putStringArrayListExtra("section9", new ArrayList<>(array9HillLunch));
                 i.putStringArrayListExtra("section10", new ArrayList<>());
                 i.putStringArrayListExtra("section11", new ArrayList<>());
-//                if (lunchString != null) { i.putExtra("food", lunchString); }
-//                else {i.putExtra("food", "Could not load menu data.");}
                 startActivity(i);
 
             }
@@ -160,8 +152,6 @@ public class NotificationsFragment extends Fragment {
                 i.putStringArrayListExtra("section9", new ArrayList<>(array9HillDinner));
                 i.putStringArrayListExtra("section10", new ArrayList<>());
                 i.putStringArrayListExtra("section11", new ArrayList<>());
-//                if (dinnerString != null) { i.putExtra("food", dinnerString); }
-//                else {i.putExtra("food", "Could not load menu data.");}
                 startActivity(i);
 
             }
@@ -175,12 +165,9 @@ public class NotificationsFragment extends Fragment {
         binding = null;
     }
     public class doIT extends AsyncTask<Void,Void,Void> {
-        String words;
-        String burgeBreakfastText;
-        String burgeLunchText;
-        String burgeDinnerText;
 
-
+        //Web Scrape for Hillcrest dinning hall
+        //Will parse the div elements into an array by meal
         @Override
         protected Void doInBackground(Void... params) {
             try {
@@ -232,6 +219,7 @@ public class NotificationsFragment extends Fragment {
                     }
 
                 }
+                //removing any empty elements
                 while(HillDinneritems.remove(""));
                 while(HillLunchitems.remove(""));
                 while(HillBreakfastitems.remove(""));
@@ -243,13 +231,8 @@ public class NotificationsFragment extends Fragment {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-//            //textView.setText(burgeItems);
-//            //System.out.println(burgeItems);
-//            breakfastString = burgeBreakfastText;
-//            lunchString = burgeLunchText;
-//            dinnerString = burgeDinnerText;
 
-            //Arranging Hill Breakfast
+            //Arranging Hillcrest Breakfast
             array1HillBreakfast = new ArrayList<>();
             array2HillBreakfast = new ArrayList<>();
             array3HillBreakfast = new ArrayList<>();
@@ -277,7 +260,7 @@ public class NotificationsFragment extends Fragment {
             array4HillBreakfast = HillBreakfastitems.subList(indexofHillBreakfast.get(3),indexofHillBreakfast.get(4));
             array5HillBreakfast = HillBreakfastitems.subList(indexofHillBreakfast.get(4),HillBreakfastitems.size());
 
-            //Aranging Hill Lunch
+            //Arranging Hillcrest Lunch
             array1HillLunch = new ArrayList<>();
             array2HillLunch = new ArrayList<>();
             array3HillLunch = new ArrayList<>();
@@ -321,7 +304,7 @@ public class NotificationsFragment extends Fragment {
             array8HillLunch = HillLunchitems.subList(indexofHillLunch.get(7),indexofHillLunch.get(8));
             array9HillLunch = HillLunchitems.subList(indexofHillLunch.get(8),HillLunchitems.size());
 
-            //Arranging Hill Dinner
+            //Arranging Hillcrest Dinner
             array1HillDinner = new ArrayList<>();
             array2HillDinner = new ArrayList<>();
             array3HillDinner = new ArrayList<>();

@@ -44,7 +44,7 @@ import java.io.*;
 
 
 
-
+//HomeFragment = Burge menus
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
@@ -56,9 +56,6 @@ public class HomeFragment extends Fragment {
     private Button bdbutton;
     private Button vote;
 
-    public String breakfastString;
-    public String lunchString;
-    public String dinnerString;
 
     public ArrayList<String> BurgeBreakfastitems;
     public List<String> array1BurgeBreakfast;
@@ -95,7 +92,8 @@ public class HomeFragment extends Fragment {
     public  List<String> array9BurgeDinner;
     public  List<Integer> indexofBurgeDinner;
 
-
+    //function to read Database
+    //will print to the console the number of votes for specified item
     public  void voteRead(Editable args) throws Exception {
         URL url = new URL("http://workoutdev.org:5000/vote?item=" + args);
         URLConnection yc = url.openConnection();
@@ -109,7 +107,8 @@ public class HomeFragment extends Fragment {
 
 
     }
-
+    //function to write to the Database
+    //will update the vote count by 1 for specified item
     public void voteWrite(Editable a) throws IOException {
         URL website = new URL("http://workoutdev.org:5000/vote");
         URLConnection yc = website.openConnection();
@@ -117,10 +116,7 @@ public class HomeFragment extends Fragment {
         http.setRequestMethod("POST");
         http.setDoOutput(true);
         byte[] out = ("{\"name\":\"" + a + "\",\"value\":\"" + 1 + "\"}").getBytes(StandardCharsets.UTF_8);
-        //byte[] out1 = "{\"name\":\"Food\",\"value\":\"1\"}".getBytes(StandardCharsets.UTF_8);
         int length = out.length;
-        //System.out.println(length);
-
         http.setFixedLengthStreamingMode(length);
         http.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
         http.connect();
@@ -133,6 +129,7 @@ public class HomeFragment extends Fragment {
             System.out.println(line);
         }
     }
+        //will create the View for the HomeFragment aka Burge menus
         public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
@@ -149,6 +146,7 @@ public class HomeFragment extends Fragment {
                 textView.setText(s);
             }
         });
+            //fixed error with thread policy problem
             int SDK_INT = android.os.Build.VERSION.SDK_INT;
             if (SDK_INT > 8) {
                 StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
@@ -157,6 +155,8 @@ public class HomeFragment extends Fragment {
             }
         new doIT().execute();
         bbutton = binding.btnView;
+        //Burge Breakfast menu button
+        //When clicked will go to FoodScreen with the menu
         bbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -173,17 +173,13 @@ public class HomeFragment extends Fragment {
                 i.putStringArrayListExtra("section9", new ArrayList<>());
                 i.putStringArrayListExtra("section10", new ArrayList<>());
                 i.putStringArrayListExtra("section11", new ArrayList<>());
-//                if (breakfastString != null) {
-//                    i.putExtra("food",breakfastString);
-//                }
-//                else {
-//                    i.putExtra("food", "Could not load menu data.");
-//                }
                 startActivity(i);
 
             }
         });
         blbutton = binding.btnView2;
+        //Burge Lunch menu button
+        //When clicked will go to FoodScreen with the menu
         blbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -200,13 +196,13 @@ public class HomeFragment extends Fragment {
                 i.putStringArrayListExtra("section9", new ArrayList<>(array9BurgeLunch));
                 i.putStringArrayListExtra("section10", new ArrayList<>(array10BurgeLunch));
                 i.putStringArrayListExtra("section11", new ArrayList<>(array11BurgeLunch));
-//                if (lunchString != null) { i.putExtra("food", lunchString); }
-//                else {i.putExtra("food", "Could not load menu data.");}
                 startActivity(i);
 
             }
         });
         bdbutton = binding.btnView3;
+        //Burge Dinner menu button
+        //When clicked will go to FoodScreen with the menu
         bdbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -223,13 +219,14 @@ public class HomeFragment extends Fragment {
                 i.putStringArrayListExtra("section9", new ArrayList<>(array9BurgeDinner));
                 i.putStringArrayListExtra("section10", new ArrayList<>());
                 i.putStringArrayListExtra("section11", new ArrayList<>());
-//                if (dinnerString != null) { i.putExtra("food", dinnerString); }
-//                else {i.putExtra("food", "Could not load menu data.");}
                 startActivity(i);
 
             }
         });
-        vote= binding.btnView4;
+        //Voting for food item (only done for Burge, didn't have time to implement other dinning halls)
+        //When clicked will get the input from the user and update the vote count by 1
+        //Will output to console the new vote count
+        vote = binding.btnView4;
         vote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -261,12 +258,10 @@ public class HomeFragment extends Fragment {
         binding = null;
     }
     public class doIT extends AsyncTask<Void,Void,Void> {
-        String words;
-        String burgeBreakfastText;
-        String burgeLunchText;
-        String burgeDinnerText;
 
 
+        //Web Scrape for Burge dinning hall
+        //Will parse the div elements into an array by meal
         @Override
         protected Void doInBackground(Void... params) {
             try {
@@ -318,6 +313,7 @@ public class HomeFragment extends Fragment {
                     }
 
                 }
+                //removing any empty elements
                 while(BurgeDinneritems.remove(""));
                 while(BurgeLunchitems.remove(""));
                 while(BurgeBreakfastitems.remove(""));
@@ -329,11 +325,6 @@ public class HomeFragment extends Fragment {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-//            //textView.setText(burgeItems);
-//            //System.out.println(burgeItems);
-//            breakfastString = burgeBreakfastText;
-//            lunchString = burgeLunchText;
-//            dinnerString = burgeDinnerText;
 
             //Arranging Burge Breakfast
             array1BurgeBreakfast = new ArrayList<>();

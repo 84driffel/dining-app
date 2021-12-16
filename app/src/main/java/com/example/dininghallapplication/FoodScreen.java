@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//FoodScreen = where the menu will be printed out to
 public class FoodScreen extends AppCompatActivity {
     public List<String> section1;
     public List<String> section2;
@@ -40,7 +40,7 @@ public class FoodScreen extends AppCompatActivity {
         section11 = new ArrayList<>();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_screen);
-        //unparsed = getIntent().getStringArrayListExtra("food");
+        //will get the section of the menu
         section1 = getIntent().getStringArrayListExtra("section1");
         section2 = getIntent().getStringArrayListExtra("section2");
         section3 = getIntent().getStringArrayListExtra("section3");
@@ -52,15 +52,11 @@ public class FoodScreen extends AppCompatActivity {
         section9 = getIntent().getStringArrayListExtra("section9");
         section10 = getIntent().getStringArrayListExtra("section10");
         section11 = getIntent().getStringArrayListExtra("section11");
-
-        /*if (unparsed == null) {
-            //finish();
-            //startActivity(getIntent());
-        }*/
-
-        //String parsed = foodParser(unparsed);
+        //Section 1-4 will never be empty since each dinning hall has at least 4 sections of food
+        //Section 5-11 will sometimes be empty depending on the dinning hall
+        //This will check to make sure no empty sections will be printed
         TextView foodTextView = (TextView) findViewById(R.id.foodText);
-        if (section1.isEmpty() == false) {
+        if (!section1.isEmpty()) {
             String a = "<b>" + section1.get(0) + "</b>";
             String b = "<u>" + section1.get(1) + "</u>";
             foodTextView.append(Html.fromHtml(a));
@@ -73,7 +69,7 @@ public class FoodScreen extends AppCompatActivity {
                 foodTextView.append("\n");
             }
         }
-        if (section1.isEmpty() == false) {
+        if (!section2.isEmpty()) {
             foodTextView.append("\n");
             String c = "<b>" + section2.get(0) + "</b>";
             String d = "<u>" + section2.get(1) + "</u>";
@@ -87,7 +83,7 @@ public class FoodScreen extends AppCompatActivity {
                 foodTextView.append("\n");
             }
         }
-        if (section1.isEmpty() == false) {
+        if (!section3.isEmpty()) {
             foodTextView.append("\n");
             String e = "<b>" + section3.get(0) + "</b>";
             String f = "<u>" + section3.get(1) + "</u>";
@@ -101,7 +97,7 @@ public class FoodScreen extends AppCompatActivity {
                 foodTextView.append("\n");
             }
         }
-        if (section1.isEmpty() == false) {
+        if (!section4.isEmpty()) {
             foodTextView.append("\n");
             String g = "<b>" + section4.get(0) + "</b>";
             String h = "<u>" + section4.get(1) + "</u>";
@@ -235,6 +231,7 @@ public class FoodScreen extends AppCompatActivity {
                 foodTextView.append("\n");
             }
         }
+        //Hardcoded legend for the menu since the website format to scrape this was not optimal
         String z = "<b>" + "Allergen and Nutrition Legend" + "</b>";
         foodTextView.append("\n");
         foodTextView.append(Html.fromHtml(z));

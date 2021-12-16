@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-
+//DashboardFragment = Catlett
 public class DashboardFragment extends Fragment {
 
     private DashboardViewModel dashboardViewModel;
@@ -38,9 +38,7 @@ public class DashboardFragment extends Fragment {
     private Button bbutton;
     private Button blbutton;
     private Button bdbutton;
-    public String breakfastString;
-    public String lunchString;
-    public String dinnerString;
+
 
     public ArrayList<String> CatletBreakfastitems;
     public List<String> array1CatlettBreakfast;
@@ -69,7 +67,7 @@ public class DashboardFragment extends Fragment {
     public List<Integer> indexofCatlettDinner;
 
 
-
+    //will create the View for the HomeFragment aka Catlett menus
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         dashboardViewModel =
@@ -87,6 +85,8 @@ public class DashboardFragment extends Fragment {
         });
         new doIT().execute();
         bbutton = binding.btnView;
+        //Catlett Breakfast menu button
+        //When clicked will go to FoodScreen with the menu
         bbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,17 +103,13 @@ public class DashboardFragment extends Fragment {
                 i.putStringArrayListExtra("section9", new ArrayList<>());
                 i.putStringArrayListExtra("section10", new ArrayList<>());
                 i.putStringArrayListExtra("section11", new ArrayList<>());
-//                if (breakfastString != null) {
-//                    i.putExtra("food",breakfastString);
-//                }
-//                else {
-//                    i.putExtra("food", "Could not load menu data.");
-//                }
                 startActivity(i);
 
             }
         });
         blbutton = binding.btnView2;
+        //Catlett Lunch menu button
+        //When clicked will go to FoodScreen with the menu
         blbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -130,13 +126,13 @@ public class DashboardFragment extends Fragment {
                 i.putStringArrayListExtra("section9", new ArrayList<>());
                 i.putStringArrayListExtra("section10", new ArrayList<>());
                 i.putStringArrayListExtra("section11", new ArrayList<>());
-//                if (lunchString != null) { i.putExtra("food", lunchString); }
-//                else {i.putExtra("food", "Could not load menu data.");}
                 startActivity(i);
 
             }
         });
         bdbutton = binding.btnView3;
+        //Catlett Dinner menu button
+        //When clicked will go to FoodScreen with the menu
         bdbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -153,8 +149,6 @@ public class DashboardFragment extends Fragment {
                 i.putStringArrayListExtra("section9", new ArrayList<>());
                 i.putStringArrayListExtra("section10", new ArrayList<>());
                 i.putStringArrayListExtra("section11", new ArrayList<>());
-//                if (dinnerString != null) { i.putExtra("food", dinnerString); }
-//                else {i.putExtra("food", "Could not load menu data.");}
                 startActivity(i);
 
             }
@@ -168,12 +162,10 @@ public class DashboardFragment extends Fragment {
         binding = null;
     }
     public class doIT extends AsyncTask<Void,Void,Void> {
-        String words;
-        String burgeBreakfastText;
-        String burgeLunchText;
-        String burgeDinnerText;
 
 
+        //Web Scrape for Catlett dinning hall
+        //Will parse the div elements into an array by meal
         @Override
         protected Void doInBackground(Void... params) {
             try {
@@ -225,6 +217,7 @@ public class DashboardFragment extends Fragment {
                     }
 
                 }
+                //removing any empty elements
                 while(CatletDinneritems.remove(""));
                 while(CatletLunchitems.remove(""));
                 while(CatletBreakfastitems.remove(""));
@@ -236,13 +229,8 @@ public class DashboardFragment extends Fragment {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-//            //textView.setText(burgeItems);
-//            //System.out.println(burgeItems);
-//            breakfastString = burgeBreakfastText;
-//            lunchString = burgeLunchText;
-//            dinnerString = burgeDinnerText;
 
-            //Arranging Cat Breakfast
+            //Arranging Catlett Breakfast
             array1CatlettBreakfast = new ArrayList<>();
             array2CatlettBreakfast = new ArrayList<>();
             array3CatlettBreakfast = new ArrayList<>();
@@ -266,7 +254,7 @@ public class DashboardFragment extends Fragment {
             array3CatlettBreakfast = CatletBreakfastitems.subList(indexofCatlettBreakfast.get(2),indexofCatlettBreakfast.get(3));
             array4CatlettBreakfast = CatletBreakfastitems.subList(indexofCatlettBreakfast.get(3),CatletBreakfastitems.size());
 
-            //Aranging Cat Lunch
+            //Aranging Catlett Lunch
             array1CatlettLunch = new ArrayList<>();
             array2CatlettLunch = new ArrayList<>();
             array3CatlettLunch = new ArrayList<>();
@@ -302,7 +290,7 @@ public class DashboardFragment extends Fragment {
             array6CatlettLunch = CatletLunchitems.subList(indexofCatlettLunch.get(5),indexofCatlettLunch.get(6));
             array7CatlettLunch = CatletLunchitems.subList(indexofCatlettLunch.get(6),CatletLunchitems.size());
 
-            //Arranging Cat Dinner
+            //Arranging Catlett Dinner
             array1CatlettDinner = new ArrayList<>();
             array2CatlettDinner = new ArrayList<>();
             array3CatlettDinner = new ArrayList<>();
