@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
+//CustomFragment = Preferences (Allows the user to set Preferences of menus)
 public class CustomFragment extends PreferenceFragmentCompat {
 
     public Boolean burge = false;
@@ -130,11 +130,12 @@ public class CustomFragment extends PreferenceFragmentCompat {
     public List<String> array9HillDinner;
     public List<Integer> indexofHillDinner;
 
+    //Creating Preference checkboxes for all options
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.root_preferences, rootKey);
         new doIT().execute();
-
+        //Pref
         Preference burgePref = findPreference("burge");
         burgePref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
@@ -217,7 +218,9 @@ public class CustomFragment extends PreferenceFragmentCompat {
             }
         });
 
-
+        //Preference Logic
+        //Will check to see which preferences the user selects
+        //And then out put that to the Food Screen
         Preference navbutton = findPreference("menubutton");
         navbutton.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
@@ -370,12 +373,8 @@ public class CustomFragment extends PreferenceFragmentCompat {
     }
 
     public class doIT extends AsyncTask<Void,Void,Void> {
-        String words;
-        String burgeBreakfastText;
-        String burgeLunchText;
-        String burgeDinnerText;
 
-
+        // Web Scrape for all menus
         @Override
         protected Void doInBackground(Void... params) {
             try {
@@ -548,11 +547,7 @@ public class CustomFragment extends PreferenceFragmentCompat {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-//            //textView.setText(burgeItems);
-//            //System.out.println(burgeItems);
-//            breakfastString = burgeBreakfastText;
-//            lunchString = burgeLunchText;
-//            dinnerString = burgeDinnerText;
+
 
             //Arranging Burge Breakfast
             array1BurgeBreakfast = new ArrayList<>();
@@ -676,7 +671,7 @@ public class CustomFragment extends PreferenceFragmentCompat {
             array9BurgeDinner = BurgeDinneritems.subList(indexofBurgeDinner.get(8),BurgeDinneritems.size());
 
 
-            //Arranging Cat Breakfast
+            //Arranging Catlett Breakfast
             array1CatlettBreakfast = new ArrayList<>();
             array2CatlettBreakfast = new ArrayList<>();
             array3CatlettBreakfast = new ArrayList<>();
@@ -700,7 +695,7 @@ public class CustomFragment extends PreferenceFragmentCompat {
             array3CatlettBreakfast = CatletBreakfastitems.subList(indexofCatlettBreakfast.get(2),indexofCatlettBreakfast.get(3));
             array4CatlettBreakfast = CatletBreakfastitems.subList(indexofCatlettBreakfast.get(3),CatletBreakfastitems.size());
 
-            //Aranging Cat Lunch
+            //Aranging Catlett Lunch
             array1CatlettLunch = new ArrayList<>();
             array2CatlettLunch = new ArrayList<>();
             array3CatlettLunch = new ArrayList<>();
@@ -736,7 +731,7 @@ public class CustomFragment extends PreferenceFragmentCompat {
             array6CatlettLunch = CatletLunchitems.subList(indexofCatlettLunch.get(5),indexofCatlettLunch.get(6));
             array7CatlettLunch = CatletLunchitems.subList(indexofCatlettLunch.get(6),CatletLunchitems.size());
 
-            //Arranging Cat Dinner
+            //Arranging Catlett Dinner
             array1CatlettDinner = new ArrayList<>();
             array2CatlettDinner = new ArrayList<>();
             array3CatlettDinner = new ArrayList<>();
@@ -769,7 +764,7 @@ public class CustomFragment extends PreferenceFragmentCompat {
             array6CatlettDinner = CatletDinneritems.subList(indexofCatlettDinner.get(5),CatletDinneritems.size());
 
 
-            //Arranging Hill Breakfast
+            //Arranging Hillcrest Breakfast
             array1HillBreakfast = new ArrayList<>();
             array2HillBreakfast = new ArrayList<>();
             array3HillBreakfast = new ArrayList<>();
@@ -797,7 +792,7 @@ public class CustomFragment extends PreferenceFragmentCompat {
             array4HillBreakfast = HillBreakfastitems.subList(indexofHillBreakfast.get(3),indexofHillBreakfast.get(4));
             array5HillBreakfast = HillBreakfastitems.subList(indexofHillBreakfast.get(4),HillBreakfastitems.size());
 
-            //Aranging Hill Lunch
+            //Aranging Hillcrest Lunch
             array1HillLunch = new ArrayList<>();
             array2HillLunch = new ArrayList<>();
             array3HillLunch = new ArrayList<>();
@@ -841,7 +836,7 @@ public class CustomFragment extends PreferenceFragmentCompat {
             array8HillLunch = HillLunchitems.subList(indexofHillLunch.get(7),indexofHillLunch.get(8));
             array9HillLunch = HillLunchitems.subList(indexofHillLunch.get(8),HillLunchitems.size());
 
-            //Arranging Hill Dinner
+            //Arranging Hillcrest Dinner
             array1HillDinner = new ArrayList<>();
             array2HillDinner = new ArrayList<>();
             array3HillDinner = new ArrayList<>();
